@@ -23,5 +23,5 @@ for photo in json_data:
 print(len(url_list)) #how many url are
 print(len(set(url_list)))  #eliminate duplicates
 
-# Final answer there are 4 URL duplicates 
+# Final answer there are 4 URL are duplicates 
 
