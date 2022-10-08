@@ -168,5 +168,5 @@ loginTesting.reset_username_and_password()
 
 driver.close() 
 
-print("***********************Stop TESTING********************************")     
+print("***********************Stop TESTING*******************************")     
         
