@@ -7,6 +7,8 @@ from selenium.webdriver.chrome.service import Service
 import time
 
 
+# we are testing the login in feature of the website 
+
 driver = webdriver.Chrome()
 
 class LoginTests():
