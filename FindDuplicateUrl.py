@@ -20,7 +20,7 @@ url_list=[]
 for photo in json_data:
     url_list.append(photo['url']) #add each url to each photo to the list
 
-print(len(url_list)) #how many url are
+print(len(url_list)) #how many url there are
 print(len(set(url_list)))  #eliminate duplicates
 
 # Final answer there are 4 URL duplicates 
