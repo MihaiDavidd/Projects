@@ -1,0 +1,107 @@
+import { Reveal_User } from '/support/classes/User'
+
+let User = {}
+
+describe('Audience Builder', function() {
+	before(function() {
+		cy.fixture('credentials').then(function(data) {
+			let shopId = Cypress.env("shopId") || "demo01"
+			User = new Reveal_User(data[shopId])
+		})
+	})
+
+    it('Audience builder', function() {
+        User.Goto('Audience Builder')
+    })
+
+    it('NPS PRE Scores', function() {
+        cy.viewport(1300,1800)
+        // check Pre Scores appear
+        cy.get('#nps_scores_pre > .col-lg-12 > [data-toggle="modal"] > .selection-box-filters').click()
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .mb-3')
+            .should('be.visible').should('contain','Set your view')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .col-12 > span')
+            .should('be.visible').should('contain','NPS Pre')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(1)')
+            .should('be.visible').should('contain','0')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(2)')
+            .should('be.visible').should('contain','1')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(3)')
+            .should('be.visible').should('contain','2')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(4)')
+            .should('be.visible').should('contain','3')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(5)')
+            .should('be.visible').should('contain','4')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(6)')
+            .should('be.visible').should('contain','5')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(7)')
+            .should('be.visible').should('contain','6')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(8)')
+            .should('be.visible').should('contain','7')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(9)')
+            .should('be.visible').should('contain','8')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(10)')
+            .should('be.visible').should('contain','9')
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(11)')
+            .should('be.visible').should('contain','10')
+    // Check if you can click on checkbox
+        cy.get('#nps_scores_pre-0').click()
+        cy.get('#nps_scores_pre-1').click()
+        cy.get('#nps_scores_pre-2').click()
+        cy.get('#nps_scores_pre-3').click()
+        cy.get('#nps_scores_pre-4').click()
+        cy.get('#nps_scores_pre-5').click()
+        cy.get('#nps_scores_pre-6').click()
+        cy.get('#nps_scores_pre-7').click()
+        cy.get('#nps_scores_pre-8').click()
+        cy.get('#nps_scores_pre-9').click()
+        cy.get('#nps_scores_pre-10').click()
+    // Close
+        cy.get('#nps_scores_pre_modal > .modal-dialog > .modal-content > .filter-actions > .d-flex > .modal-dismiss').click()
+    })
+
+    it('NPS Post Scores', function() {
+        // check Post Scores appear
+        cy.get('#nps_scores_post > .col-lg-12 > [data-toggle="modal"] > .selection-box-filters').click()
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .mb-3')
+            .should('be.visible').should('contain','Set your view')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .col-12 > span')
+            .should('be.visible').should('contain','NPS Post')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(1)')
+            .should('be.visible').should('contain','0')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(2)')
+            .should('be.visible').should('contain','1')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(3)')
+            .should('be.visible').should('contain','2')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(4)')
+            .should('be.visible').should('contain','3')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(5)')
+            .should('be.visible').should('contain','4')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(6)')
+            .should('be.visible').should('contain','5')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(7)')
+            .should('be.visible').should('contain','6')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(8)')
+            .should('be.visible').should('contain','7')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(9)')
+            .should('be.visible').should('contain','8')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(10)')
+            .should('be.visible').should('contain','9')
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .setting-container > .container > .card-box > :nth-child(11)')
+            .should('be.visible').should('contain','10')
+    // Check if you can click on checkbox
+        cy.get('#nps_scores_post-0').click()
+        cy.get('#nps_scores_post-1').click()
+        cy.get('#nps_scores_post-2').click()
+        cy.get('#nps_scores_post-3').click()
+        cy.get('#nps_scores_post-4').click()
+        cy.get('#nps_scores_post-5').click()
+        cy.get('#nps_scores_post-6').click()
+        cy.get('#nps_scores_post-7').click()
+        cy.get('#nps_scores_post-8').click()
+        cy.get('#nps_scores_post-9').click()
+        cy.get('#nps_scores_post-10').click()
+    // Close
+        cy.get('#nps_scores_post_modal > .modal-dialog > .modal-content > .filter-actions > .d-flex > .modal-dismiss').click()
+    })
+})
