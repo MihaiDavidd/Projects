@@ -1,0 +1,8 @@
+{
+    "userpermissiongiver" : ["User Management", "Billing", "NPS Alerts","Audience Builder"],
+    "userpermissionreceiver" : [""],
+    "User Management" : ["User Management", "Edit User", "Invite User", "Remove Users", "Add/edit Shop Roles"],
+    "Billing" : ["Show Billing Page", "Billing Contact Custom Quote", "Download Billing Invoice"],
+    "NPS Alerts" : ["NPS Alerts", "Create NPS Alert", "Update NPS Alert", "Delete NPS Alert"],
+    "Audience Builder" : ["Audience Builder", "List Audiences", "Create Audience", "Audience Details", "Audience Export", "Sync Audience Provider", "Delete Audience"]
+}
